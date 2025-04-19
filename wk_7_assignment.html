@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Define the animation */
+        @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+
+        /* Apply the animation to an element */
+        .animated {
+        animation: fadeIn 2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Element to animate -->
+<div id="myElement">Hello, World!</div>
+
+<!-- Button to trigger animation -->
+<button id="animateButton">Animate</button>
+
+<script>
+    // Get the element and button
+const element = document.getElementById("myElement");
+const button = document.getElementById("animateButton");
+
+// Add event listener to button
+button.addEventListener("click", () => {
+  // Add the animated class to the element
+  element.classList.add("animated");
+
+  // Store data in localStorage
+  localStorage.setItem("animationTriggered", "true");
+});
+
+// Check if animation was previously triggered
+if (localStorage.getItem("animationTriggered") === "true") {
+  // Add the animated class to the element
+  element.classList.add("animated");
+}
+</script>
+</body>
+</html>
